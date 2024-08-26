@@ -1,7 +1,8 @@
 body {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -48,14 +49,13 @@ body {
 }
 
 .container {
-    position: absolute;
+    position: relative; /* Alterado para manter a estrutura correta */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px; /* Espaçamento entre as linhas de quadrados */
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 150px;
 }
 
 .grid {
@@ -91,17 +91,6 @@ body {
     border: 6px solid #312a2c !important;
 }
 
-@keyframes flip {
-    0% {
-        transform: rotateY(0deg);
-    }
-    50% {
-        transform: rotateY(90deg);
-    }
-    100% {
-        transform: rotateY(0deg);
-    }
-}
 
 .square {
     width: 70px;
@@ -116,13 +105,11 @@ body {
     cursor: pointer;
     border-radius: 10%;
     color: white;
-    transition: transform 0.05s; /* Suaviza a transformação */
+    transition: transform 0.5s, background-color 0.5s, border-color 0.5s; /* Suaviza a transformação e a mudança de cor */
     backface-visibility: hidden; /* Oculta o verso durante a rotação */
+    perspective: 1000px; /* Adiciona perspectiva para o efeito 3D */
 }
 
-.square.flip {
-    animation: flip 0.5s forwards; /* Aplica a animação */
-}
 
 .square.active-square {
     box-shadow: inset 0 -8px 0 0 #4C4347;
@@ -133,6 +120,22 @@ body {
     outline: none; /* Remove o destaque padrão do foco */
 }
 
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Aumenta o tamanho do quadrado */
+    }
+    100% {
+        transform: scale(1); /* Volta ao tamanho normal */
+    }
+}
+
+.square.pop-animation {
+    animation: pop 0.2s ease-in-out; /* Animação de 0.2s */
+}
+
 .message {
     display: none; /* Oculta a mensagem inicialmente */
     background-color: #3498db; /* Fundo azul */
@@ -141,6 +144,85 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
-    margin-bottom: 10px; /* Espaço abaixo da mensagem */
-    margin-top: 40px; /* Espaço acima da mensagem */
+    position: absolute; /* Define a posição como absoluta */
+    top: 50px; /* Ajuste para o local onde você quer que a mensagem apareça */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a mensagem horizontalmente */
+    z-index: 1000; /* Garante que a mensagem fique sobre os outros elementos */
+}
+
+.restart-button {
+    display: none; /* Inicialmente oculto */
+    padding: 10px 20px;
+    background-color: #34db58;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px; /* Espaçamento entre o botão e a mensagem */
+    position: absolute;
+    top: 70px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.restart-button:hover {
+    background-color: #2980b9;
+}
+
+.alphabet-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre as linhas do teclado */
+    margin-top: 20px; /* Espaço entre os quadrados e o alfabeto */
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px; /* Espaçamento entre as letras na mesma linha */
+}
+
+.alphabet-letter {
+    width: 40px;
+    height: 60px;
+    border: 2px solid #594B4F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #312a2c; /* Cor padrão */
+    color: white;
+    border-radius: 10%; /* Bordas arredondadas */
+    text-transform: uppercase;
+    cursor: default;
+    user-select: none;
+}
+
+.alphabet-letter.rightp {
+    background-color: #3aa394 !important; /* Verde */
+}
+
+.alphabet-letter.rightl {
+    background-color: #d3ad69 !important; /* Amarelo */
+}
+
+.alphabet-letter.wrong {
+    background-color: #594B4F !important; /* Cinza/Escuro para letras erradas */
+    color: #6e5c62;
+}
+
+
+/* Remove a barra piscante de toda a página */
+* {
+    outline: none; /* Remove o contorno ao focar nos elementos */
+}
+
+body, input, textarea, button, select {
+    caret-color: transparent; /* Remove o cursor de texto (barra piscante) */
 }
