@@ -231,13 +231,13 @@ body, input, textarea, button, select {
         height: 40px;
         font-size: 30px;
     }
-    
+
     .alphabet-container {
         gap: 5px; /* Diminuir o espaçamento entre as linhas do teclado */
     }
 
     .keyboard-row {
-        gap: 3px; /* Diminuir o espaçamento entre as letras na mesma linha */
+        gap: 1px; /* Diminuir o espaçamento entre as letras na mesma linha */
     }
 
     .square.active-square {
