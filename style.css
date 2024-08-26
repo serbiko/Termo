@@ -259,8 +259,8 @@ body, input, textarea, button, select {
     }
 
     .control-button {
-        width: 60px; /* Tornando os botões de controle menores em telas pequenas */
-        height: 50px;
+        width: 48px; /* Tornando os botões de controle menores em telas pequenas */
+        height: 40px;
     }
 
     .message {
