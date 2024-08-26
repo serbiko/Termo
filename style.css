@@ -186,13 +186,13 @@ body {
 .alphabet-letter, .control-button {
     width: 40px;
     height: 60px;
-    border: 2px solid #594B4F; /* Contorno */
+    border: 2px solid #594B4F;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    background-color: #312a2c; /* Cor de fundo */
+    background-color: #312a2c;
     color: white;
     border-radius: 10%; 
     text-transform: uppercase;
@@ -214,24 +214,8 @@ body {
 }
 
 .control-button {
+    width: 80px; /* Tornando os botões maiores para facilitar o clique */
     height: 60px;
-    background-color: #312a2c; /* Mantém a cor de fundo para os botões de controle */
-    border: 2px solid #594B4F; /* Mantém o contorno */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-    border-radius: 10%;
-}
-
-
-.control-button.enter {
-    width: 100px; /* Largura maior para o Enter */
-}
-
-.control-button.backspace {
-    width: 60px; /* Largura menor para o Backspace */
 }
 
 * {
@@ -255,7 +239,7 @@ body, input, textarea, button, select {
     }
 
     .square.active-square {
-        box-shadow: inset 0 -4px 0 0 #4C4347;
+        box-shadow: inset 0 -8px 0 0 #4C4347;
         height: 40px !important;
         width: 40px !important;  /* Certifique-se de que o tamanho do quadrado ativo permaneça igual aos outros */
     }
@@ -274,12 +258,9 @@ body, input, textarea, button, select {
         font-size: 18px;
     }
 
-    .control-button.enter {
-        width: 60px; /* Ajuste a largura do Enter em telas menores */
-    }
-
-    .control-button.backspace {
-        width: 40px; /* Ajuste a largura do Backspace em telas menores */
+    .control-button {
+        width: 48px; /* Tornando os botões de controle menores em telas pequenas */
+        height: 40px;
     }
 
     .message {
