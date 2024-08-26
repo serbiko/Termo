@@ -1,0 +1,146 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #6e5c62; /* Cor de fundo */
+}
+
+.cabecalho {
+    position: absolute;
+    top: 0; /* Colado no topo da página */
+    width: 100%; /* Ocupa a largura total */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Distância dos cantos da página */
+    box-sizing: border-box; /* Garante que o padding seja contabilizado no tamanho total */
+    margin: 0; /* Remove margens extras */
+}
+
+.esquerda, .direita {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os ícones */
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove qualquer padding */
+}
+
+.titulo p {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove qualquer padding */
+    color: white; /* Cor da fonte */
+    font-size: 35px; /* Ajuste o tamanho conforme necessário */
+    font-weight: 100;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.cabecalho i {
+    color: white; /* Cor dos ícones */
+    font-size: 24px; /* Tamanho dos ícones */
+    cursor: pointer; /* Cursor de pointer para os ícones */
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove qualquer padding */
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre as linhas de quadrados */
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row; /* Alinha os quadrados lado a lado */
+    gap: 5px; /* Espaçamento entre os quadrados */
+}
+
+/* Cor de fundo dos quadrados na linha ativa */
+.grid.active .square {
+    background-color: #6e5c62; /* Cor de fundo dos quadrados na linha ativa */
+    border: 6px solid #4C4347;
+}
+
+/* Cor de fundo dos quadrados na linha preenchida */
+.grid.completed .square {
+    background-color: #312a2c; /* Cor de fundo dos quadrados na linha preenchida */
+    border: 6px solid #312a2c;
+}
+
+.square.rightp {
+    background-color: #3aa394 !important; /* Verde para letras corretas na posição correta */
+    border: 6px solid #3aa394 !important;
+}
+
+.square.rightl {
+    background-color: #d3ad69 !important; /* Amarelo para letras na posição errada */
+    border: 6px solid #d3ad69 !important;
+}
+
+.square.wrong {
+    background-color: #312a2c !important;
+    border: 6px solid #312a2c !important;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.square {
+    width: 70px;
+    height: 70px;
+    border: 6px solid #594B4F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 49px;
+    font-weight: bold;
+    background-color: #594B4F; /* Cor padrão dos quadrados */
+    cursor: pointer;
+    border-radius: 10%;
+    color: white;
+    transition: transform 0.05s; /* Suaviza a transformação */
+    backface-visibility: hidden; /* Oculta o verso durante a rotação */
+}
+
+.square.flip {
+    animation: flip 0.5s forwards; /* Aplica a animação */
+}
+
+.square.active-square {
+    box-shadow: inset 0 -8px 0 0 #4C4347;
+    height: 70px;
+}
+
+.square:focus {
+    outline: none; /* Remove o destaque padrão do foco */
+}
+
+.message {
+    display: none; /* Oculta a mensagem inicialmente */
+    background-color: #3498db; /* Fundo azul */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px; /* Espaço abaixo da mensagem */
+    margin-top: 40px; /* Espaço acima da mensagem */
+}
