@@ -180,6 +180,7 @@ function handleKeydown(e) {
     } else if (e.key === 'Enter') { // Passa para a próxima linha ao pressionar Enter, se a linha estiver preenchida
         if (isRowFilled(currentGrid)) {
             clearHighlight(); // Remove o destaque antes de verificar a palavra
+            disableInput();
             checkWord(currentGrid); // Verifica se a palavra está correta
         }
     } else if (e.key === 'ArrowLeft') { 
@@ -203,8 +204,15 @@ function handleKeydown(e) {
 
 // Função para lidar com eventos de clique e toque em botões de controle
 function addClickAndTouchEventListener(element, callback) {
-    element.addEventListener('click', callback);
-    element.addEventListener('touchstart', callback); // Adiciona suporte para toque
+    element.addEventListener('click', (e) => {
+        e.preventDefault();  // Previne comportamentos padrões que podem causar duplicação
+        callback();
+    });
+
+    element.addEventListener('touchstart', (e) => {
+        e.preventDefault();  // Previne comportamentos padrões que podem causar duplicação
+        callback();
+    });
 }
 
 // Adiciona eventos de clique e toque para as letras do alfabeto
