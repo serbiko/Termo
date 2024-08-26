@@ -6,33 +6,33 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #6e5c62; /* Cor de fundo */
+    background-color: #6e5c62;
 }
 
 .cabecalho {
     position: absolute;
-    top: 0; /* Colado no topo da página */
-    width: 100%; /* Ocupa a largura total */
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Distância dos cantos da página */
-    box-sizing: border-box; /* Garante que o padding seja contabilizado no tamanho total */
-    margin: 0; /* Remove margens extras */
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .esquerda, .direita {
     display: flex;
-    gap: 15px; /* Espaçamento entre os ícones */
-    margin: 0; /* Remove margens extras */
-    padding: 0; /* Remove qualquer padding */
+    gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 .titulo p {
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove qualquer padding */
-    color: white; /* Cor da fonte */
-    font-size: 35px; /* Ajuste o tamanho conforme necessário */
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 35px;
     font-weight: 100;
     font-family: 'Arial Black', sans-serif;
     text-align: center;
@@ -41,48 +41,47 @@ body {
 }
 
 .cabecalho i {
-    color: white; /* Cor dos ícones */
-    font-size: 24px; /* Tamanho dos ícones */
-    cursor: pointer; /* Cursor de pointer para os ícones */
-    margin: 0; /* Remove margens extras */
-    padding: 0; /* Remove qualquer padding */
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0; 
+    padding: 0;
 }
 
 .container {
-    position: relative; /* Alterado para manter a estrutura correta */
+    position: relative; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px; /* Espaçamento entre as linhas de quadrados */
+    gap: 5px; 
     padding-top: 150px;
 }
 
 .grid {
     display: flex;
-    flex-direction: row; /* Alinha os quadrados lado a lado */
-    gap: 5px; /* Espaçamento entre os quadrados */
+    flex-direction: row;
+    gap: 5px; 
 }
 
-/* Cor de fundo dos quadrados na linha ativa */
 .grid.active .square {
-    background-color: #6e5c62; /* Cor de fundo dos quadrados na linha ativa */
+    background-color: #6e5c62; 
     border: 6px solid #4C4347;
 }
 
-/* Cor de fundo dos quadrados na linha preenchida */
+
 .grid.completed .square {
-    background-color: #312a2c; /* Cor de fundo dos quadrados na linha preenchida */
+    background-color: #312a2c; 
     border: 6px solid #312a2c;
 }
 
 .square.rightp {
-    background-color: #3aa394 !important; /* Verde para letras corretas na posição correta */
+    background-color: #3aa394 !important;
     border: 6px solid #3aa394 !important;
 }
 
 .square.rightl {
-    background-color: #d3ad69 !important; /* Amarelo para letras na posição errada */
+    background-color: #d3ad69 !important; 
     border: 6px solid #d3ad69 !important;
 }
 
@@ -101,13 +100,13 @@ body {
     align-items: center;
     font-size: 49px;
     font-weight: bold;
-    background-color: #594B4F; /* Cor padrão dos quadrados */
+    background-color: #594B4F; 
     cursor: pointer;
     border-radius: 10%;
     color: white;
-    transition: transform 0.5s, background-color 0.5s, border-color 0.5s; /* Suaviza a transformação e a mudança de cor */
-    backface-visibility: hidden; /* Oculta o verso durante a rotação */
-    perspective: 1000px; /* Adiciona perspectiva para o efeito 3D */
+    transition: transform 0.5s, background-color 0.5s, border-color 0.5s; 
+    backface-visibility: hidden; 
+    perspective: 1000px; 
 }
 
 
@@ -117,7 +116,7 @@ body {
 }
 
 .square:focus {
-    outline: none; /* Remove o destaque padrão do foco */
+    outline: none;
 }
 
 @keyframes pop {
@@ -125,34 +124,34 @@ body {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.2); /* Aumenta o tamanho do quadrado */
+        transform: scale(1.2);
     }
     100% {
-        transform: scale(1); /* Volta ao tamanho normal */
+        transform: scale(1);
     }
 }
 
 .square.pop-animation {
-    animation: pop 0.2s ease-in-out; /* Animação de 0.2s */
+    animation: pop 0.2s ease-in-out; 
 }
 
 .message {
-    display: none; /* Oculta a mensagem inicialmente */
-    background-color: #3498db; /* Fundo azul */
+    display: none;
+    background-color: #3498db;
     color: white;
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
-    position: absolute; /* Define a posição como absoluta */
-    top: 50px; /* Ajuste para o local onde você quer que a mensagem apareça */
+    position: absolute; 
+    top: 50px; 
     left: 50%;
-    transform: translateX(-50%); /* Centraliza a mensagem horizontalmente */
-    z-index: 1000; /* Garante que a mensagem fique sobre os outros elementos */
+    transform: translateX(-50%); 
+    z-index: 1000; 
 }
 
 .restart-button {
-    display: none; /* Inicialmente oculto */
+    display: none;
     padding: 10px 20px;
     background-color: #34db58;
     color: white;
@@ -161,9 +160,9 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 30px; /* Espaçamento entre o botão e a mensagem */
+    margin-top: 30px; 
     position: absolute;
-    top: 70px; /* Ajuste conforme necessário */
+    top: 70px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -178,13 +177,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Espaçamento entre as linhas do teclado */
-    margin-top: 20px; /* Espaço entre os quadrados e o alfabeto */
+    gap: 10px; 
+    margin-top: 20px; 
 }
 
 .keyboard-row {
     display: flex;
-    gap: 5px; /* Espaçamento entre as letras na mesma linha */
+    gap: 5px; 
 }
 
 .alphabet-letter {
@@ -196,33 +195,33 @@ body {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    background-color: #312a2c; /* Cor padrão */
+    background-color: #312a2c;
     color: white;
-    border-radius: 10%; /* Bordas arredondadas */
+    border-radius: 10%; 
     text-transform: uppercase;
     cursor: default;
     user-select: none;
 }
 
 .alphabet-letter.rightp {
-    background-color: #3aa394 !important; /* Verde */
+    background-color: #3aa394 !important; 
 }
 
 .alphabet-letter.rightl {
-    background-color: #d3ad69 !important; /* Amarelo */
+    background-color: #d3ad69 !important; 
 }
 
 .alphabet-letter.wrong {
-    background-color: #594B4F !important; /* Cinza/Escuro para letras erradas */
+    background-color: #594B4F !important;
     color: #6e5c62;
 }
 
 
-/* Remove a barra piscante de toda a página */
+
 * {
-    outline: none; /* Remove o contorno ao focar nos elementos */
+    outline: none; 
 }
 
 body, input, textarea, button, select {
-    caret-color: transparent; /* Remove o cursor de texto (barra piscante) */
+    caret-color: transparent; 
 }
