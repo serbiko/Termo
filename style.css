@@ -183,16 +183,16 @@ body {
     gap: 5px; 
 }
 
-.alphabet-letter {
+.alphabet-letter, .control-button {
     width: 40px;
     height: 60px;
-    border: 2px solid #594B4F;
+    border: 2px solid #594B4F; /* Contorno */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    background-color: #312a2c;
+    background-color: #312a2c; /* Cor de fundo */
     color: white;
     border-radius: 10%; 
     text-transform: uppercase;
@@ -215,7 +215,16 @@ body {
 
 .control-button {
     height: 60px;
+    background-color: #312a2c; /* Mantém a cor de fundo para os botões de controle */
+    border: 2px solid #594B4F; /* Mantém o contorno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 10%;
 }
+
 
 .control-button.enter {
     width: 100px; /* Largura maior para o Enter */
@@ -259,7 +268,7 @@ body, input, textarea, button, select {
         gap: 3px;
     }
 
-    .alphabet-letter {
+    .alphabet-letter, .control-button {
         width: 24px;
         height: 40px;
         font-size: 18px;
