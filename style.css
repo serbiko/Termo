@@ -108,7 +108,8 @@ body {
 }
 
 .square.active-square {
-    box-shadow: inset 0 -4px 0 0 #4C4347; /* Reduzido o tamanho do box-shadow */
+    box-shadow: inset 0 -8px 0 0 #4C4347;
+    height: 70px;
 }
 
 .square:focus {
@@ -182,7 +183,7 @@ body {
     gap: 5px; 
 }
 
-.alphabet-letter {
+.alphabet-letter, .control-button {
     width: 40px;
     height: 60px;
     border: 2px solid #594B4F;
@@ -195,7 +196,7 @@ body {
     color: white;
     border-radius: 10%; 
     text-transform: uppercase;
-    cursor: default;
+    cursor: pointer;
     user-select: none;
 }
 
@@ -210,6 +211,11 @@ body {
 .alphabet-letter.wrong {
     background-color: #594B4F !important;
     color: #6e5c62;
+}
+
+.control-button {
+    width: 80px; /* Tornando os botões maiores para facilitar o clique */
+    height: 60px;
 }
 
 * {
@@ -233,21 +239,22 @@ body, input, textarea, button, select {
     }
 
     .alphabet-container {
-        gap: 5px; /* Diminuir o espaçamento entre as linhas do teclado */
+        gap: 5px;
     }
 
     .keyboard-row {
-        gap: 1px; /* Diminuir o espaçamento entre as letras na mesma linha */
+        gap: 3px;
     }
 
-    .square.active-square {
-        box-shadow: inset 0 -4px 0 0 #4C4347;
-    }
-
-    .alphabet-letter {
+    .alphabet-letter, .control-button {
         width: 30px;
-        height: 70px;
-        font-size: 12px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .control-button {
+        width: 60px; /* Tornando os botões de controle menores em telas pequenas */
+        height: 50px;
     }
 
     .message {

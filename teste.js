@@ -201,6 +201,22 @@ function handleKeydown(e) {
     }
 }
 
+document.querySelectorAll('.alphabet-letter').forEach(button => {
+    button.addEventListener('click', () => {
+        const letter = button.textContent;
+        handleKeydown({ key: letter });
+    });
+});
+
+document.getElementById('backspace').addEventListener('click', () => {
+    handleKeydown({ key: 'Backspace' });
+});
+
+document.getElementById('enter').addEventListener('click', () => {
+    handleKeydown({ key: 'Enter' });
+});
+
+
 function updateAlphabet(letter, className) {
     const alphabetLetter = Array.from(document.querySelectorAll('.alphabet-letter'))
         .find(el => el.textContent === letter);
