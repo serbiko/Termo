@@ -213,19 +213,16 @@ body {
     color: #6e5c62;
 }
 
-.control-button {
-    width: 80px; /* Tornando os botões maiores para facilitar o clique */
-    height: 60px;
-}
-
 .control-button-backspace {
-    width: 60px; /* Backspace menor que o Enter */
+    width: 40px; /* Mesmo tamanho das letras */
     height: 60px;
+    font-size: 24px;
 }
 
 .control-button-enter {
-    width: 120px; /* Enter maior que o Backspace */
+    width: 80px; /* Maior que o Backspace */
     height: 60px;
+    font-size: 24px;
 }
 
 * {
@@ -251,7 +248,7 @@ body, input, textarea, button, select {
     .square.active-square {
         box-shadow: inset 0 -4px 0 0 #4C4347;
         height: 40px !important;
-        width: 40px !important;  /* Certifique-se de que o tamanho do quadrado ativo permaneça igual aos outros */
+        width: 40px !important;
     }
 
     .alphabet-container {
@@ -269,12 +266,12 @@ body, input, textarea, button, select {
     }
 
     .control-button-backspace {
-        width: 40px; /* Reduzindo o tamanho do Backspace no celular */
+        width: 24px; /* Mesmo tamanho das letras no celular */
         height: 40px;
     }
 
     .control-button-enter {
-        width: 60px; /* Ajustando o tamanho do Enter no celular */
+        width: 60px; /* Mantendo o Enter maior no celular */
         height: 40px;
     }
 
