@@ -201,21 +201,28 @@ function handleKeydown(e) {
     }
 }
 
+// Função para lidar com eventos de clique e toque em botões de controle
+function addClickAndTouchEventListener(element, callback) {
+    element.addEventListener('click', callback);
+    element.addEventListener('touchstart', callback); // Adiciona suporte para toque
+}
+
+// Adiciona eventos de clique e toque para as letras do alfabeto
 document.querySelectorAll('.alphabet-letter').forEach(button => {
-    button.addEventListener('click', () => {
+    addClickAndTouchEventListener(button, () => {
         const letter = button.textContent;
         handleKeydown({ key: letter });
     });
 });
 
-document.getElementById('backspace').addEventListener('click', () => {
+// Adiciona eventos de clique e toque para os botões Backspace e Enter
+addClickAndTouchEventListener(document.getElementById('backspace'), () => {
     handleKeydown({ key: 'Backspace' });
 });
 
-document.getElementById('enter').addEventListener('click', () => {
+addClickAndTouchEventListener(document.getElementById('enter'), () => {
     handleKeydown({ key: 'Enter' });
 });
-
 
 function updateAlphabet(letter, className) {
     const alphabetLetter = Array.from(document.querySelectorAll('.alphabet-letter'))
