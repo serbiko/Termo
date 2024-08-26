@@ -240,8 +240,8 @@ body, input, textarea, button, select {
 
     .square.active-square {
         box-shadow: inset 0 -8px 0 0 #4C4347;
-        height: 40px;
-        width: 40px;  /* Certifique-se de que o tamanho do quadrado ativo permaneça igual aos outros */
+        height: 40px !important;
+        width: 40px !important;  /* Certifique-se de que o tamanho do quadrado ativo permaneça igual aos outros */
     }
 
     .alphabet-container {

@@ -203,15 +203,21 @@ function handleKeydown(e) {
 }
 
 // Função para lidar com eventos de clique e toque em botões de controle
+let touchEventFired = false;
+
 function addClickAndTouchEventListener(element, callback) {
-    element.addEventListener('click', (e) => {
-        e.preventDefault();  // Previne comportamentos padrões que podem causar duplicação
+    element.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        touchEventFired = true;
         callback();
     });
 
-    element.addEventListener('touchstart', (e) => {
-        e.preventDefault();  // Previne comportamentos padrões que podem causar duplicação
-        callback();
+    element.addEventListener('click', (e) => {
+        if (!touchEventFired) {
+            e.preventDefault();
+            callback();
+        }
+        touchEventFired = false; // Reseta o flag após o clique
     });
 }
 
