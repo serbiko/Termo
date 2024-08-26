@@ -239,7 +239,7 @@ body, input, textarea, button, select {
     }
 
     .square.active-square {
-        box-shadow: inset 0 -8px 0 0 #4C4347;
+        box-shadow: inset 0 -4px 0 0 #4C4347;
         height: 40px !important;
         width: 40px !important;  /* Certifique-se de que o tamanho do quadrado ativo permaneça igual aos outros */
     }
@@ -266,12 +266,12 @@ body, input, textarea, button, select {
     .message {
         font-size: 14px;
         padding: 8px 16px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .restart-button {
         font-size: 14px;
         padding: 8px 16px;
-        margin-top: 30px;
+        margin-top: 35px;
     }
 }
