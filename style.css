@@ -183,7 +183,7 @@ body {
     gap: 5px; 
 }
 
-.alphabet-letter, .control-button {
+.alphabet-letter {
     width: 40px;
     height: 60px;
     border: 2px solid #594B4F;
@@ -218,6 +218,16 @@ body {
     height: 60px;
 }
 
+.control-button-backspace {
+    width: 60px; /* Backspace menor que o Enter */
+    height: 60px;
+}
+
+.control-button-enter {
+    width: 120px; /* Enter maior que o Backspace */
+    height: 60px;
+}
+
 * {
     outline: none; 
 }
@@ -239,7 +249,7 @@ body, input, textarea, button, select {
     }
 
     .square.active-square {
-        box-shadow: inset 0 -8px 0 0 #4C4347;
+        box-shadow: inset 0 -4px 0 0 #4C4347;
         height: 40px !important;
         width: 40px !important;  /* Certifique-se de que o tamanho do quadrado ativo permaneça igual aos outros */
     }
@@ -252,14 +262,19 @@ body, input, textarea, button, select {
         gap: 3px;
     }
 
-    .alphabet-letter, .control-button {
+    .alphabet-letter {
         width: 24px;
         height: 40px;
         font-size: 18px;
     }
 
-    .control-button {
-        width: 48px; /* Tornando os botões de controle menores em telas pequenas */
+    .control-button-backspace {
+        width: 40px; /* Reduzindo o tamanho do Backspace no celular */
+        height: 40px;
+    }
+
+    .control-button-enter {
+        width: 60px; /* Ajustando o tamanho do Enter no celular */
         height: 40px;
     }
 
