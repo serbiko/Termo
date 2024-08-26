@@ -253,8 +253,8 @@ body, input, textarea, button, select {
     }
 
     .alphabet-letter, .control-button {
-        width: 30px;
-        height: 50px;
+        width: 24px;
+        height: 40px;
         font-size: 18px;
     }
 
