@@ -276,27 +276,33 @@ async function checkWord(grid) {
     let correctWordArray = correctWord.split(''); // Converte a palavra correta em array
     let guessArray = guess.split(''); // Converte o palpite em array
     let correctCount = 0; // Contador para letras corretas
+    let usedIndexes = []; // Armazena os índices já utilizados para letras amarelas
 
-    squares.forEach((square, i) => {
-        setTimeout(() => {
-            // Primeiro, marque os acertos (verde)
-            if (guessArray[i] === correctWordArray[i]) {
-                square.classList.add('rightp'); // Marca como verde
-                updateAlphabet(guessArray[i], 'rightp');
-                correctWordArray[i] = null; // Marca esta posição como usada
-                guessArray[i] = null; // Marca esta posição como usada no palpite
-                correctCount++; // Incrementa o contador de letras corretas
-            } else if (guessArray[i] !== null && correctWordArray.includes(guessArray[i])) {
-                // Marque os acertos na posição errada (amarelo)
-                square.classList.add('rightl'); // Marca como amarelo
-                updateAlphabet(guessArray[i], 'rightl');
-                correctWordArray[correctWordArray.indexOf(guessArray[i])] = null; // Marca esta letra como usada
-            } else {
-                // Marca como errado (cinza/escuro)
-                square.classList.add('wrong');
-                updateAlphabet(guessArray[i], 'wrong');
+    // Primeiro, marque os acertos (verde)
+    guessArray.forEach((letter, i) => {
+        if (letter === correctWordArray[i]) {
+            squares[i].classList.add('rightp'); // Marca como verde
+            updateAlphabet(letter, 'rightp');
+            correctWordArray[i] = null; // Marca esta posição como usada
+            guessArray[i] = null; // Marca esta posição como usada no palpite
+            correctCount++; // Incrementa o contador de letras corretas
+        }
+    });
+
+    // Agora, marque os acertos na posição errada (amarelo)
+    guessArray.forEach((letter, i) => {
+        if (letter !== null && correctWordArray.includes(letter)) {
+            let index = correctWordArray.indexOf(letter);
+            if (!usedIndexes.includes(index)) {
+                squares[i].classList.add('rightl'); // Marca como amarelo
+                updateAlphabet(letter, 'rightl');
+                correctWordArray[index] = null; // Marca esta letra como usada
+                usedIndexes.push(index); // Armazena o índice usado
             }
-        }, i * 500); // Atraso de 500ms entre cada quadrado
+        } else if (letter !== null) {
+            squares[i].classList.add('wrong'); // Marca como errado
+            updateAlphabet(letter, 'wrong');
+        }
     });
 
     // Bloqueia a entrada enquanto a animação está em execução
