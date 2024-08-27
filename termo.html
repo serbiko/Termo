@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="cabecalho">
+        <div class="esquerda">
+            <i class="fas fa-question"></i>
+            <i class="fas fa-arrow-up"></i>
+        </div>
+        <div class="titulo">
+            <p>TERMO</p>
+        </div>
+        <div class="direita">
+            <i class="fas fa-chart-bar"></i>
+            <i class="fas fa-cog"></i>
+        </div>
+    </div>
+    <div id="message" class="message"></div>
+    <button id="restartButton" class="restart-button" style="display: none;">Jogar novamente</button>
+    <div class="container">
+        <div class="grid" data-row="0">
+            <div class="square" data-index="0"></div>
+            <div class="square" data-index="1"></div>
+            <div class="square" data-index="2"></div>
+            <div class="square" data-index="3"></div>
+            <div class="square" data-index="4"></div>
+        </div>
+        <div class="grid" data-row="1">
+            <div class="square" data-index="0"></div>
+            <div class="square" data-index="1"></div>
+            <div class="square" data-index="2"></div>
+            <div class="square" data-index="3"></div>
+            <div class="square" data-index="4"></div>
+        </div>
+        <div class="grid" data-row="2">
+            <div class="square" data-index="0"></div>
+            <div class="square" data-index="1"></div>
+            <div class="square" data-index="2"></div>
+            <div class="square" data-index="3"></div>
+            <div class="square" data-index="4"></div>
+        </div>
+        <div class="grid" data-row="3">
+            <div class="square" data-index="0"></div>
+            <div class="square" data-index="1"></div>
+            <div class="square" data-index="2"></div>
+            <div class="square" data-index="3"></div>
+            <div class="square" data-index="4"></div>
+        </div>
+        <div class="grid" data-row="4">
+            <div class="square" data-index="0"></div>
+            <div class="square" data-index="1"></div>
+            <div class="square" data-index="2"></div>
+            <div class="square" data-index="3"></div>
+            <div class="square" data-index="4"></div>
+        </div>
+        <div class="grid" data-row="5">
+            <div class="square" data-index="0"></div>
+            <div class="square" data-index="1"></div>
+            <div class="square" data-index="2"></div>
+            <div class="square" data-index="3"></div>
+            <div class="square" data-index="4"></div>
+        </div>
+    </div>
+
+    <div class="alphabet-container">
+        <div class="keyboard-row">
+            <div class="alphabet-letter">Q</div>
+            <div class="alphabet-letter">W</div>
+            <div class="alphabet-letter">E</div>
+            <div class="alphabet-letter">R</div>
+            <div class="alphabet-letter">T</div>
+            <div class="alphabet-letter">Y</div>
+            <div class="alphabet-letter">U</div>
+            <div class="alphabet-letter">I</div>
+            <div class="alphabet-letter">O</div>
+            <div class="alphabet-letter">P</div>
+        </div>
+        <div class="keyboard-row">
+            <div class="alphabet-letter">A</div>
+            <div class="alphabet-letter">S</div>
+            <div class="alphabet-letter">D</div>
+            <div class="alphabet-letter">F</div>
+            <div class="alphabet-letter">G</div>
+            <div class="alphabet-letter">H</div>
+            <div class="alphabet-letter">J</div>
+            <div class="alphabet-letter">K</div>
+            <div class="alphabet-letter">L</div>
+            <div class="control-button" id="backspace">⌫</div>
+        </div>
+        <div class="keyboard-row">
+            <div class="alphabet-letter">Z</div>
+            <div class="alphabet-letter">X</div>
+            <div class="alphabet-letter">C</div>
+            <div class="alphabet-letter">V</div>
+            <div class="alphabet-letter">B</div>
+            <div class="alphabet-letter">N</div>
+            <div class="alphabet-letter">M</div>
+            <div class="control-button" id="enter">⏎</div>
+        </div>
+    </div>
+
+
+    <script src="teste.js"></script>
+</body>
+</html>

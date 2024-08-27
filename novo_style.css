@@ -1,0 +1,278 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #6e5c62;
+}
+
+.cabecalho {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.esquerda, .direita {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: 100;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.cabecalho i {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0; 
+    padding: 0;
+}
+
+.container {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; 
+    padding-top: 150px;
+}
+
+.word-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    gap: 20px;
+}
+
+.left-grid, .right-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.grid {
+    display: flex;
+    gap: 5px;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #594B4F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: #594B4F; 
+    cursor: pointer;
+    border-radius: 10%;
+    color: white;
+    transition: transform 0.5s, background-color 0.5s, border-color 0.5s; 
+    backface-visibility: hidden; 
+    perspective: 1000px; 
+}
+
+.square.rightp {
+    background-color: #3aa394 !important;
+    border: 4px solid #3aa394 !important;
+}
+
+.square.rightl {
+    background-color: #d3ad69 !important; 
+    border: 4px solid #d3ad69 !important;
+}
+
+.square.wrong {
+    background-color: #312a2c !important;
+    border: 4px solid #312a2c !important;
+}
+
+.square.active-square {
+    box-shadow: inset 0 -8px 0 0 #4C4347;
+}
+
+.square:focus {
+    outline: none;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.square.pop-animation {
+    animation: pop 0.2s ease-in-out; 
+}
+
+.message {
+    display: none;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute; 
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1000; 
+}
+
+.restart-button {
+    display: none;
+    padding: 10px 20px;
+    background-color: #34db58;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px; 
+    position: absolute;
+    top: 70px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.restart-button:hover {
+    background-color: #2980b9;
+}
+
+.alphabet-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px; 
+}
+
+.alphabet-letter, .control-button {
+    width: 40px;
+    height: 60px;
+    border: 2px solid #594B4F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #312a2c;
+    color: white;
+    border-radius: 10%; 
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+
+.alphabet-letter.rightp {
+    background-color: #3aa394 !important; 
+}
+
+.alphabet-letter.rightl {
+    background-color: #d3ad69 !important; 
+}
+
+.alphabet-letter.wrong {
+    background-color: #594B4F !important;
+    color: #6e5c62;
+}
+
+.control-button {
+    width: 80px; /* Tornando os botões maiores para facilitar o clique */
+    height: 60px;
+}
+
+* {
+    outline: none; 
+}
+
+body, input, textarea, button, select {
+    caret-color: transparent; 
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .titulo p {
+        font-size: 24px;
+    }
+
+    .square {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+
+    .square.active-square {
+        box-shadow: inset 0 -4px 0 0 #4C4347;
+        height: 40px !important;
+        width: 40px !important;  /* Certifique-se de que o tamanho do quadrado ativo permaneça igual aos outros */
+    }
+
+    .alphabet-container {
+        gap: 5px;
+    }
+
+    .keyboard-row {
+        gap: 3px;
+    }
+
+    .alphabet-letter, .control-button {
+        width: 24px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .control-button {
+        width: 48px; /* Tornando os botões de controle menores em telas pequenas */
+        height: 40px;
+    }
+
+    .message {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-top: 5px;
+    }
+
+    .restart-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-top: 35px;
+    }
+}
