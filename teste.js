@@ -281,8 +281,10 @@ async function checkWord(grid) {
     // Primeiro, marque os acertos (verde)
     guessArray.forEach((letter, i) => {
         if (letter === correctWordArray[i]) {
-            squares[i].classList.add('rightp'); // Marca como verde
-            updateAlphabet(letter, 'rightp');
+            setTimeout(() => {
+                squares[i].classList.add('rightp'); // Marca como verde
+                updateAlphabet(letter, 'rightp');
+            }, i * 500); // Adiciona o atraso para a animação em cada quadrado
             correctWordArray[i] = null; // Marca esta posição como usada
             guessArray[i] = null; // Marca esta posição como usada no palpite
             correctCount++; // Incrementa o contador de letras corretas
@@ -294,14 +296,18 @@ async function checkWord(grid) {
         if (letter !== null && correctWordArray.includes(letter)) {
             let index = correctWordArray.indexOf(letter);
             if (!usedIndexes.includes(index)) {
-                squares[i].classList.add('rightl'); // Marca como amarelo
-                updateAlphabet(letter, 'rightl');
+                setTimeout(() => {
+                    squares[i].classList.add('rightl'); // Marca como amarelo
+                    updateAlphabet(letter, 'rightl');
+                }, i * 500); // Adiciona o atraso para a animação em cada quadrado
                 correctWordArray[index] = null; // Marca esta letra como usada
                 usedIndexes.push(index); // Armazena o índice usado
             }
         } else if (letter !== null) {
-            squares[i].classList.add('wrong'); // Marca como errado
-            updateAlphabet(letter, 'wrong');
+            setTimeout(() => {
+                squares[i].classList.add('wrong'); // Marca como errado
+                updateAlphabet(letter, 'wrong');
+            }, i * 500); // Adiciona o atraso para a animação em cada quadrado
         }
     });
 
@@ -324,7 +330,7 @@ async function checkWord(grid) {
             disableInput(); // Desabilita a entrada após a última tentativa
             showMessage(`😢 Não foi dessa vez. A palavra correta era: ${correctWord}`);
         }
-    }, squares.length * 500 + 500); // Espera a animação de flip terminar antes de permitir avançar ou encerrar
+    }, squares.length * 400 + 500); // Espera a animação de flip terminar antes de permitir avançar ou encerrar
 }
 
 // Função para remover o destaque
