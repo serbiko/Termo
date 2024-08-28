@@ -49,41 +49,60 @@ body {
 }
 
 .container {
-    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px; /* Espaço entre os dois grupos */
+    padding-top: 150px;
+}
+
+.left-side, .right-side {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px; 
-    padding-top: 150px;
-}
-
-.word-container {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    gap: 20px;
-}
-
-.left-grid, .right-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
 
 .grid {
     display: flex;
-    gap: 5px;
+    flex-direction: row;
+    gap: 5px; 
+}
+
+.grid.active .square {
+    background-color: #6e5c62; 
+    border: 6px solid #4C4347;
+}
+
+.grid.completed .square {
+    background-color: #312a2c; 
+    border: 6px solid #312a2c;
+}
+
+.square.rightp {
+    background-color: #3aa394 !important;
+    border: 6px solid #3aa394 !important;
+}
+
+.square.rightl {
+    background-color: #d3ad69 !important; 
+    border: 6px solid #d3ad69 !important;
+}
+
+.square.wrong {
+    background-color: #312a2c !important;
+    border: 6px solid #312a2c !important;
 }
 
 .square {
-    width: 50px;
-    height: 50px;
-    border: 4px solid #594B4F;
+    width: 70px;
+    height: 70px;
+    border: 6px solid #594B4F;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 49px;
     font-weight: bold;
     background-color: #594B4F; 
     cursor: pointer;
@@ -94,23 +113,9 @@ body {
     perspective: 1000px; 
 }
 
-.square.rightp {
-    background-color: #3aa394 !important;
-    border: 4px solid #3aa394 !important;
-}
-
-.square.rightl {
-    background-color: #d3ad69 !important; 
-    border: 4px solid #d3ad69 !important;
-}
-
-.square.wrong {
-    background-color: #312a2c !important;
-    border: 4px solid #312a2c !important;
-}
-
 .square.active-square {
     box-shadow: inset 0 -8px 0 0 #4C4347;
+    height: 70px;
 }
 
 .square:focus {
@@ -184,7 +189,7 @@ body {
     gap: 5px; 
 }
 
-.alphabet-letter, .control-button {
+.control-button {
     width: 40px;
     height: 60px;
     border: 2px solid #594B4F;
@@ -201,18 +206,49 @@ body {
     user-select: none;
 }
 
-.alphabet-letter.rightp {
-    background-color: #3aa394 !important; 
+.alphabet-letter {
+    position: relative;
+    width: 40px; 
+    height: 60px;
+    background-color: #312a2c; 
+    color: white;
+    border: 2px solid #594B4F;
+    border-radius: 10%;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
 }
 
-.alphabet-letter.rightl {
-    background-color: #d3ad69 !important; 
+.alphabet-letter.rightp-left {
+    background: linear-gradient(to right, #3aa394 50%, #312a2c 50%);
 }
 
-.alphabet-letter.wrong {
-    background-color: #594B4F !important;
-    color: #6e5c62;
+.alphabet-letter.rightp-right {
+    background: linear-gradient(to right, #312a2c 50%, #3aa394 50%);
 }
+
+.alphabet-letter.rightl-left {
+    background: linear-gradient(to right, #d3ad69 50%, #312a2c 50%);
+}
+
+.alphabet-letter.rightl-right {
+    background: linear-gradient(to right, #312a2c 50%, #d3ad69 50%);
+}
+
+.alphabet-letter.wrong-left {
+    background: linear-gradient(to right, #594B4F 50%, #312a2c 50%);
+}
+
+.alphabet-letter.wrong-right {
+    background: linear-gradient(to right, #312a2c 50%, #594B4F 50%);
+}
+
 
 .control-button {
     width: 80px; /* Tornando os botões maiores para facilitar o clique */

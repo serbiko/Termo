@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termo Duplo</title>
+    <title>Termo</title>
     <link rel="stylesheet" href="novo_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -14,7 +14,7 @@
             <i class="fas fa-arrow-up"></i>
         </div>
         <div class="titulo">
-            <p>TERMO DUPLO</p>
+            <p>TERMO</p>
         </div>
         <div class="direita">
             <i class="fas fa-chart-bar"></i>
@@ -23,98 +23,94 @@
     </div>
     <div id="message" class="message"></div>
     <button id="restartButton" class="restart-button" style="display: none;">Jogar novamente</button>
-    
     <div class="container">
-        <div class="word-container">
-            <!-- Grids para a palavra da esquerda -->
-            <div class="left-grid">
-                <div class="grid" data-row="0">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="1">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="2">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="3">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="4">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="5">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
+        <div class="left-side">
+            <div class="grid" data-row="0">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
             </div>
-            <!-- Grids para a palavra da direita -->
-            <div class="right-grid">
-                <div class="grid" data-row="0">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="1">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="2">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="3">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="4">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
-                <div class="grid" data-row="5">
-                    <div class="square" data-index="0"></div>
-                    <div class="square" data-index="1"></div>
-                    <div class="square" data-index="2"></div>
-                    <div class="square" data-index="3"></div>
-                    <div class="square" data-index="4"></div>
-                </div>
+            <div class="grid" data-row="1">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="2">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="3">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="4">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="5">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="grid" data-row="0">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="1">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="2">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="3">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="4">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
+            </div>
+            <div class="grid" data-row="5">
+                <div class="square" data-index="0"></div>
+                <div class="square" data-index="1"></div>
+                <div class="square" data-index="2"></div>
+                <div class="square" data-index="3"></div>
+                <div class="square" data-index="4"></div>
             </div>
         </div>
     </div>
